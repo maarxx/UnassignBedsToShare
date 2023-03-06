@@ -19,14 +19,16 @@ namespace UnassignBedsToShare
             Scribe_Values.Look(ref shouldKeepBed, "shouldKeepBed", false);
         }
 
-        public override void CompTick()
+        public override void CompTickRare()
         {
             Building_Bed bed = Bed;
-            if (!shouldKeepBed && bed.IsHashIntervalTick(750) && bed.CompAssignableToPawn.AssignedPawnsForReading.Any())
+            List<Pawn> assignedPawns = bed.CompAssignableToPawn.AssignedPawnsForReading;
+            if (!shouldKeepBed && assignedPawns.Any() && bed.Faction == Faction.OfPlayer)
             {
-                foreach (Pawn assignedPawn in bed.CompAssignableToPawn.AssignedPawnsForReading)
+                assignedPawns = assignedPawns.ListFullCopy();
+                foreach (Pawn assignedPawn in assignedPawns)
                 {
-                    if (RestUtility.Awake(assignedPawn))
+                    if (RestUtility.Awake(assignedPawn) || assignedPawn.CurrentBed() != Bed)
                     {
                         bed.CompAssignableToPawn.TryUnassignPawn(assignedPawn);
                     }

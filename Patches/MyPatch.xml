@@ -2,9 +2,25 @@
 <!-- Add /li/compClass to /comps if exists (i.e. other mod already added the comps field first) -->
 <Patch>
   <Operation Class="PatchOperationConditional">
-      <xpath>/Defs/ThingDef[defName="SleepingSpotBase"]/comps</xpath>
+      <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/tickerType</xpath>
       <nomatch Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="SleepingSpotBase"]</xpath>
+          <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]</xpath>
+          <value>
+              <tickerType>Rare</tickerType>
+          </value>
+      </nomatch>
+      <match Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/tickerType</xpath>
+          <value>
+              <tickerType>Rare</tickerType>
+          </value>
+      </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+      <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/comps</xpath>
+      <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]</xpath>
           <value>
               <comps>
                   <li>
@@ -14,7 +30,7 @@
           </value>
       </nomatch>
       <match Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="SleepingSpotBase"]/comps</xpath>
+          <xpath>/Defs/ThingDef[@Name="SleepingSpotBase"]/comps</xpath>
           <value>
               <li>
                   <compClass>UnassignBedsToShare.BedUnassignerComp</compClass>
@@ -24,9 +40,25 @@
   </Operation>
   
   <Operation Class="PatchOperationConditional">
-      <xpath>/Defs/ThingDef[defName="BedBase"]/comps</xpath>
+      <xpath>/Defs/ThingDef[@Name="BedBase"]/tickerType</xpath>
       <nomatch Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="BedBase"]</xpath>
+          <xpath>/Defs/ThingDef[@Name="BedBase"]</xpath>
+          <value>
+              <tickerType>Rare</tickerType>
+          </value>
+      </nomatch>
+      <match Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[@Name="BedBase"]/tickerType</xpath>
+          <value>
+              <tickerType>Rare</tickerType>
+          </value>
+      </match>
+  </Operation>
+  
+  <Operation Class="PatchOperationConditional">
+      <xpath>/Defs/ThingDef[@Name="BedBase"]/comps</xpath>
+      <nomatch Class="PatchOperationAdd">
+          <xpath>/Defs/ThingDef[@Name="BedBase"]</xpath>
           <value>
               <comps>
                   <li>
@@ -36,7 +68,7 @@
           </value>
       </nomatch>
       <match Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="BedBase"]/comps</xpath>
+          <xpath>/Defs/ThingDef[@Name="BedBase"]/comps</xpath>
           <value>
               <li>
                   <compClass>UnassignBedsToShare.BedUnassignerComp</compClass>
