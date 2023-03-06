@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ModMetaData>
+  <name>UnassignBedsToShare</name>
+  <author>Maarx</author>
+  <url>https://github.com/maarxx/UnassignBedsToShare/</url>
+  <description>Makes the "Hemogen Farm" option better and more available.</description>
+  <packageId>maarx.unassignbedstoshare</packageId>
+  <supportedVersions>
+    <li>1.4</li>
+  </supportedVersions>
+</ModMetaData>
