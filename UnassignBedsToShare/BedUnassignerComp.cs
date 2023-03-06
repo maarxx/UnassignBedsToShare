@@ -19,9 +19,6 @@ namespace UnassignBedsToShare
             Scribe_Values.Look(ref shouldKeepBed, "shouldKeepBed", false);
         }
 
-        // Hoisted from:
-        // RimWorld.Pawn_GuestTracker
-        // public void GuestTrackerTick()
         public override void CompTick()
         {
             Building_Bed bed = Bed;
