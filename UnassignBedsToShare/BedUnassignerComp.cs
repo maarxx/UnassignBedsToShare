@@ -28,7 +28,7 @@ namespace UnassignBedsToShare
                 assignedPawns = assignedPawns.ListFullCopy();
                 foreach (Pawn assignedPawn in assignedPawns)
                 {
-                    if (RestUtility.Awake(assignedPawn) || assignedPawn.CurrentBed() != Bed)
+                    if (assignedPawn.CurJob.targetA != bed)
                     {
                         bed.CompAssignableToPawn.TryUnassignPawn(assignedPawn);
                     }
