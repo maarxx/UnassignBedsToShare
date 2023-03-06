@@ -24,9 +24,9 @@
   </Operation>
   
   <Operation Class="PatchOperationConditional">
-      <xpath>/Defs/ThingDef[defName="BasicBedBase"]/comps</xpath>
+      <xpath>/Defs/ThingDef[defName="BedBase"]/comps</xpath>
       <nomatch Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="BasicBedBase"]</xpath>
+          <xpath>/Defs/ThingDef[defName="BedBase"]</xpath>
           <value>
               <comps>
                   <li>
@@ -36,7 +36,7 @@
           </value>
       </nomatch>
       <match Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName="BasicBedBase"]/comps</xpath>
+          <xpath>/Defs/ThingDef[defName="BedBase"]/comps</xpath>
           <value>
               <li>
                   <compClass>UnassignBedsToShare.BedUnassignerComp</compClass>
